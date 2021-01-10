@@ -36,7 +36,7 @@ class UserList extends React.Component {
 
     componentDidMount() {
         // setInterval(this.loadList, 2000);
-
+        this.props.history.push(`/admin/messages/`);
         this.loadList();
         // this.insertUsers(); //insertic heto karam chgrem
 
@@ -95,7 +95,7 @@ class UserList extends React.Component {
             active: id,
 
 
-        })
+        },() => this.loadList())
 
     }
 
@@ -128,11 +128,11 @@ class UserList extends React.Component {
 
             backgroundColor: '#3F0E40',
             position: 'absolute',
-            marginLeft: '350px',
-            width: '650px',
-            height: '545px',
+            marginLeft: '280px',
+            width: '800px',
+            height: '600px',
             color: 'white',
-            bottom: '-15px'
+            bottom: '85px'
         }
 
         return (
@@ -189,15 +189,7 @@ class UserList extends React.Component {
                                             <h5> {item.name} {item.lastname}
                                                 {/* ONLINE OFLINE */}
                                                 {/* {this.state.obj.auth_email === item.email ? <span className="chat_date" style={{ color: 'green' }}> <b>Online</b></span> : <span className="chat_date" ><b> OFline </b></span>} */}
-                                            </h5>
-                                            {
-                                                this.state.seen ? <b style={{ color: 'white' }}> {
-                                                    this.state.mesaGes[item.id]
-                                                }</b> : null
-                                            }
-
-
-
+                                            </h5><b style={{ color: 'yellow' }}> {this.state.mesaGes[item.id]}</b> 
                                         </div>
 
 

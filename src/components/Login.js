@@ -65,7 +65,7 @@ class Login extends React.Component {
     render() {
 
         if (this.state.loggedIn) {
-            return <Redirect to='/admin/messages/66289' />
+            return <Redirect to='/admin/messages/' />
         }
 
         return (
